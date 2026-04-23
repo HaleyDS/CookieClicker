@@ -16,6 +16,11 @@
       }
 </style>
 <body>
+	<h1>SHOP</h1>
+<p id="shopPrice"></p>
+<input type="button" id="shop" name="shop" value="Buy level" onClick="multShop()"></button>
+<p id="shopReturn"></p>
+	<br>
 	<p></p>
 <img src="Cookie.jpg" width="1023" height="896" onClick="Clicked()" alt="" style="display: block; margin-left: auto; margin-right: auto;"/>
 </body>
@@ -26,9 +31,14 @@ let ClickCount=0
 let points = 0;
 let pointMulti = 1;
 let level = 0;
+onload(Start());
 function Clicked(){
-	ClickCount=ClickCount+(1*level);
+	ClickCount=ClickCount+(1*pointMulti);
 }
+function Start(){
+    document.getElementById("shopPrice").innerHTML = "100";
+}
+
 //======================================Functions==========================================
 function multShop() {
     //messege
@@ -44,12 +54,13 @@ function multShop() {
         pointMulti = mult[level];
         level++;
         error = "You are now Level:" + level
+		document.getElementById("shopPrice").innerHTML = priceTotal[level];
     }
     else {//Will boot not enough points if you do not match the current price
         error = "Not Enough Points";
     }
 
-    document.getElementById("shopReturn") = error;//returns either a good messege or bad messege
+    document.getElementById("shopReturn").innerHTML = error;//returns either a good messege or bad messege
 }
 //========================================================================================
 </script>
