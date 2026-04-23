@@ -16,14 +16,19 @@
       }
 </style>
 <body>
-<img src="Cookie.jpg" width="1023" height="896" alt="" style="display: block; margin-left: auto; margin-right: auto;"/>
+	<p></p>
+<img src="Cookie.jpg" width="1023" height="896" onClick="Clicked()" alt="" style="display: block; margin-left: auto; margin-right: auto;"/>
 </body>
   
 <script>
+let ClickCount=0
 //Needed global variables
 let points = 0;
 let pointMulti = 1;
 let level = 0;
+function Clicked(){
+	ClickCount=ClickCount+(1*level);
+}
 //======================================Functions==========================================
 function multShop() {
     //messege
@@ -50,9 +55,3 @@ function multShop() {
 </script>
   
 </html>
-
-
-
-
-
-<!-- another comment Bubba -->
